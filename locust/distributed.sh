@@ -17,7 +17,7 @@ export SCRIPT=locust_script.py
 #. ./venv/bin/activate
 
 if $LOCUST_UI ; then
-    locust -f $SCRIPT -H $ENDPOINT_NAME --master --expect-workers $WORKERS -u $USERS -t $RUN_TIME --csv results &
+    locust -f $SCRIPT -H $ENDPOINT_NAME --master --expect-workers $WORKERS -u $USERS --csv results &
 else
     locust -f $SCRIPT -H $ENDPOINT_NAME --master --expect-workers $WORKERS -u $USERS -t $RUN_TIME --csv results --headless &
 fi
